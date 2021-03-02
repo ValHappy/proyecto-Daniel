@@ -43,7 +43,7 @@ const useStyle = makeStyles((theme) => ({
         alignItems: 'center',
     },
     info: {
-        width: '50%',
+        width: '45%',
         height: '100%',
         padding: '0.5em',
         display: 'flex',
@@ -65,7 +65,7 @@ const useStyle = makeStyles((theme) => ({
         color: colors.text,
     },
     test: {
-        width: '50%',
+        width: '55%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',

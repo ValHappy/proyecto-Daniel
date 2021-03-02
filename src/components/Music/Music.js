@@ -1,6 +1,7 @@
 import React from 'react';
 import { Divider, makeStyles } from '@material-ui/core';
 import colors from '../../styles/colors';
+import Player from '../Player/Player';
 
 function Music() {
     const classes = useStyle();
@@ -15,10 +16,7 @@ function Music() {
 
             <Divider className={classes.divider} light orientation='horizontal' variant='middle' />
 
-            <div className={classes.player}>
-                <h3 className={classes.title}>Player</h3>
-            </div>
-
+            <Player />
         </div>
     );
 }
@@ -34,7 +32,7 @@ const useStyle = makeStyles((theme) => ({
         alignItems: 'center',
     },
     info: {
-        width: '100%',
+        width: '80%',
         height: '100%',
         margin: '0.5em',
         padding: '1em',
@@ -60,12 +58,11 @@ const useStyle = makeStyles((theme) => ({
     },
     player: {
         width: '100%',
-        height: '50%',
+        height: '40%',
         margin: '0.5em',
         padding: '1em',
         borderRadius: '0.5em',
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         background: colors.background,
