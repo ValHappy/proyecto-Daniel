@@ -18,11 +18,11 @@ function Btn(props) {
 const useStyle = makeStyles((theme) => ({
     btn: {
         margin: '2em',
-        padding: '0,5em',
+        padding: '0.5em',
         width: btnWidth,
         height: btnHeigth,
         background: colors.blue,
-        borderRadius: '0,5em',
+        borderRadius: '0.5em',
         color: colors.white,
         
         '&:hover': {

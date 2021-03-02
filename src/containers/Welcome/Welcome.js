@@ -28,7 +28,7 @@ const useStyle = makeStyles((theme) => ({
     },
     title: {
         margin: '0',
-        padding: '0,5em',
+        padding: '0.5em',
         color: colors.text,
         textAlign: 'center',
     },
@@ -37,6 +37,7 @@ const useStyle = makeStyles((theme) => ({
         padding: '1em',
         color: colors.text,
         textAlign: 'center',
+        
     },
 }));
 
