@@ -1,11 +1,17 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
 function Final() {
+    const classes = useStyle();
     return (
-        <div>
-            
+        <div className={classes.final}>
+
         </div>
     );
 }
+
+const useStyle = makeStyles((theme) => ({
+
+}));
 
 export default Final;
