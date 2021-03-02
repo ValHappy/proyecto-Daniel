@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className={classes.app}>
-      <Intro />
+      <Welcome />
     </div>
   );
 }
