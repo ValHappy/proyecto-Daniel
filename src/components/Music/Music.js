@@ -32,7 +32,7 @@ const useStyle = makeStyles((theme) => ({
         alignItems: 'center',
     },
     info: {
-        width: '80%',
+        width: '35%',
         height: '100%',
         margin: '0.5em',
         padding: '1em',
@@ -56,18 +56,6 @@ const useStyle = makeStyles((theme) => ({
         height: 2,
         background: colors.blue,
     },
-    player: {
-        width: '100%',
-        height: '40%',
-        margin: '0.5em',
-        padding: '1em',
-        borderRadius: '0.5em',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: colors.background,
-    }
-
 }));
 
 export default Music;

@@ -4,6 +4,9 @@ import Timeline from '../General/Timeline';
 import { PlayCircleFilledRounded } from '@material-ui/icons';
 import colors from '../../styles/colors';
 
+const playerWidth = 350;
+const playerHeight = 45;
+
 function Player() {
     const classes = useStyle();
 
@@ -19,8 +22,8 @@ function Player() {
 
 const useStyle = makeStyles((theme) => ({
     player: {
-        width: '100%',
-        height: '40%',
+        width: playerWidth,
+        height: playerHeight,
         margin: '0.5em',
         padding: '1em',
         borderRadius: '0.5em',

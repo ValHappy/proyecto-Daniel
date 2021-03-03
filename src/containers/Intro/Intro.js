@@ -62,10 +62,9 @@ const useStyle = makeStyles((theme) => ({
         width: '80%',
         margin: 0,
         padding: '0.5em',
-        color: colors.text,
+        color: colors.colortext,
     },
     test: {
-        width: '55%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',

@@ -1,18 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-//My components
-
 //My containers
 import Welcome from "../Welcome/Welcome";
 import Intro from '../Intro/Intro';
+import Exercise from '../Exercise/Exercise';
 
 function App() {
   const classes = useStyle();
 
   return (
     <div className={classes.app}>
-      <Intro />
+      <Exercise />
     </div>
   );
 }

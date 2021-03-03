@@ -41,13 +41,13 @@ const useStyle = makeStyles((theme) => ({
     title: {
         margin: '0',
         padding: '0.5em',
-        color: colors.text,
+        color: colors.colortext,
         textAlign: 'center',
     },
     text: {
         margin: '0',
         padding: '1em',
-        color: colors.text,
+        color: colors.colortext,
         textAlign: 'center',
     },
 }));
