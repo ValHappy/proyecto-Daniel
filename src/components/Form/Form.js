@@ -4,12 +4,12 @@ import Btn from '../General/Btn';
 import colors from '../../styles/colors';
 import { withRouter } from 'react-router-dom';
 
-function Form({ handleClose, open, props }) {
+function Form({ handleClose, open, location, history }) {
 
     const classes = useStyle();
     
     function handleClick(event, newValue) {
-        props.history.push(newValue);
+        history.push("/intro");
     }
 
     return (
@@ -43,7 +43,7 @@ function Form({ handleClose, open, props }) {
                 </div>
             </DialogContent>
 
-            <DialogActions className={classes.action} value={props.location.pathname}>
+            <DialogActions className={classes.action} data-value={location.pathname}>
                 <Btn btn={"Siguiente"} value={"/intro"} onClick={handleClick}/>
             </DialogActions>
         </Dialog>
