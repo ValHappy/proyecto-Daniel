@@ -5,7 +5,6 @@ import Logo from '../../components/General/Logo';
 import colors from '../../styles/colors';
 import Btn from '../../components/General/Btn';
 import SliderMethod from '../../components/Evaluation/SliderMethod';
-import Likert from '../../components/Evaluation/Likert';
 
 function Exercise() {
     const classes = useStyle();

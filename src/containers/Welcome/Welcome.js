@@ -4,8 +4,9 @@ import Btn from '../../components/General/Btn'
 import colors from "../../styles/colors";
 import Logo from '../../components/General/Logo';
 import Form from '../../components/Form/Form';
+import { withRouter } from 'react-router-dom';
 
-function Welcome() {
+function Welcome(props) {
     const classes = useStyle();
     const [open, setOpen] = useState(false);
 
@@ -17,6 +18,8 @@ function Welcome() {
     const handleClose = () => {
         setOpen(false);
     };
+
+    
 
     return (
         <div className={classes.welcome}>
@@ -52,4 +55,4 @@ const useStyle = makeStyles((theme) => ({
     },
 }));
 
-export default Welcome;
+export default withRouter(Welcome);

@@ -2,14 +2,15 @@ import React from 'react';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, makeStyles, TextField } from '@material-ui/core';
 import Btn from '../General/Btn';
 import colors from '../../styles/colors';
+import { withRouter } from 'react-router-dom';
 
-function Form({ handleClose, open }) {
+function Form({ handleClose, open, props }) {
 
     const classes = useStyle();
-
-    const handleClickNext = () => {
-        console.log('aqui pasa a la siguiente');
-    };
+    
+    function handleClick(event, newValue) {
+        props.history.push(newValue);
+    }
 
     return (
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm">
@@ -42,8 +43,8 @@ function Form({ handleClose, open }) {
                 </div>
             </DialogContent>
 
-            <DialogActions className={classes.action}>
-                <Btn onClick={handleClickNext} btn={"Siguiente"} />
+            <DialogActions className={classes.action} value={props.location.pathname}>
+                <Btn btn={"Siguiente"} value={"/intro"} onClick={handleClick}/>
             </DialogActions>
         </Dialog>
     );
@@ -88,4 +89,4 @@ const useStyle = makeStyles((theme) => ({
     },
 }));
 
-export default Form;
+export default withRouter(Form);

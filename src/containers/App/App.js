@@ -1,18 +1,23 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+//Navegation
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 //My containers
 import Welcome from "../Welcome/Welcome";
 import Intro from '../Intro/Intro';
-import Exercise from '../Exercise/Exercise';
 
 function App() {
   const classes = useStyle();
 
   return (
-    <div className={classes.app}>
-      <Welcome />
-    </div>
+    <Router>
+      <div className={classes.app}>
+        <Route path="/" exact component={Welcome} />
+        <Route path="/intro" component={Intro} />
+      </div>
+    </Router>
   );
 }
 
