@@ -12,7 +12,7 @@ function App() {
   const classes = useStyle();
 
   return (
-    <Router>
+    <Router basename={window.location.pathname || ''}>
       <div className={classes.app}>
         <Route path="/" exact component={Welcome} />
         <Route path="/intro" component={Intro} />
