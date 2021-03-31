@@ -1,7 +1,7 @@
 import { makeStyles, Slider } from '@material-ui/core';
 import React from 'react';
 
-function Timeline({audioDuration = "0:00", timeCurrent = "0:00", progress = 0}) {
+function Timeline({audioDuration = 0, timeCurrent = 0, progress = 0}) {
     const classes = useStyle();
     const duration = ()=>{
         let minutes = 0;
