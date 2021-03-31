@@ -5,6 +5,8 @@ import Logo from '../../components/General/Logo';
 import colors from '../../styles/colors';
 import Btn from '../../components/General/Btn';
 import SliderMethod from '../../components/Evaluation/SliderMethod';
+import LikertMethod from '../../components/Evaluation/LikertMethod';
+
 
 function Exercise() {
     const classes = useStyle();
@@ -23,7 +25,7 @@ function Exercise() {
                 </div>
                 <div className={classes.content2}>
                     <Player />
-                    <SliderMethod />
+                    <LikertMethod />
                     <Player />
                 </div>
             </div>

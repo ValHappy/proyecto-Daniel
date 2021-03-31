@@ -3,7 +3,7 @@ import { Divider, makeStyles } from '@material-ui/core';
 import colors from '../../styles/colors';
 import Player from '../Player/Player';
 
-function Music() {
+function Music({ pathFile, currentAudio, setCurrentAudio, index }) {
     const classes = useStyle();
 
     return (
@@ -13,10 +13,8 @@ function Music() {
                 <p className={classes.text}>Lorem ipsum dolor sit amet consectetur</p>
 
             </div>
-
             <Divider className={classes.divider} light orientation='horizontal' variant='middle' />
-
-            <Player />
+            <Player pathFile={pathFile} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={index} />
         </div>
     );
 }

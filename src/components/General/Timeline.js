@@ -1,13 +1,40 @@
 import { makeStyles, Slider } from '@material-ui/core';
 import React from 'react';
 
-function Timeline() {
+function Timeline({audioDuration = "0:00", timeCurrent = "0:00", progress = 0}) {
     const classes = useStyle();
+    const duration = ()=>{
+        let minutes = 0;
+        if (audioDuration >= 60) {
+            minutes = audioDuration/60;
+        }
+        
+            
+        
+        const seconds = audioDuration%60;
+        
+        const timeDuration = minutes + ":" + (seconds <10 ? "0"+seconds : seconds);
+        return timeDuration;
+    }
+
+    const currentTime = ()=>{
+        let minutes = 0;
+        if (timeCurrent >= 60) {
+            minutes = timeCurrent/60;
+        }
+        
+            
+        
+        const seconds = timeCurrent%60;
+        
+        const current = minutes + ":" + (seconds <10 ? "0"+seconds : seconds);
+        return current;
+    }
     return (
         <div className={classes.timeline}>
-            <p className={classes.timeText}>0:00</p>
-            <Slider defaultValue={30} aria-labelledby="disabled-slider" />
-            <p className={classes.timeText}>2:50</p>
+            <p className={classes.timeText}>{currentTime()}</p>
+            <Slider value={progress} aria-labelledby="disabled-slider" />
+            <p className={classes.timeText}>{duration()}</p>
         </div>
     );
 }

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 //My containers
 import Welcome from "../Welcome/Welcome";
 import Intro from '../Intro/Intro';
+import Exercise from '../Exercise/Exercise';
 
 function App() {
   const classes = useStyle();
@@ -14,7 +15,7 @@ function App() {
   return (
     <Router basename={window.location.pathname || ''}>
       <div className={classes.app}>
-        <Route path="/" exact component={Welcome} />
+       <Route path="/" exact component={Welcome} />
         <Route path="/intro" component={Intro} />
       </div>
     </Router>

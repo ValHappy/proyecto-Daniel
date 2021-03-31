@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import colors from '../../styles/colors';
 import Logo from '../../components/General/Logo';
 import Music from '../../components/Music/Music';
+import { storage } from "../../helpers/firebase"
 
 function Intro() {
+    const [state, setState] = useState([]);
+    const [currentAudio, setCurrentAudio] = useState(1);
+    const storageReading = () => {
+        storage.ref('sonidos/introduccion').listAll().then(function (res) {
+            res.prefixes.forEach(function (folderRef) {
+                // All the prefixes under listRef.
+                // You may call listAll() recursively on them.
+            });
+            res.items.forEach(function (itemRef) {
+                // All the items under listRef.
+                itemRef.getDownloadURL().then((itemPath) => {
+                    setState([...state, itemPath]);
+                });
+            });
+        }).catch(function (error) { });
+    };
+    useEffect(
+        () => {
+            storageReading();
+        }, []
+    );
     const classes = useStyle();
     return (
         <div className={classes.intro}>
@@ -15,9 +37,9 @@ function Intro() {
                     <p className={classes.text}>Lorem ipsum dolor sit amet consectetur adipiscing elit lectus sapien, cubilia mattis bibendum suscipit euismod metus proin convallis phasellus nisi, class fermentum id magnis accumsan vitae netus ad. Hendrerit fusce vestibulum placerat per primis mattis hac nostra maecenas aptent lacus mus venenatis.</p>
                 </div>
                 <div className={classes.test}>
-                    <Music />
-                    <Music />
-                    <Music />
+                    <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={1} />
+                    <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={2}/>
+                    <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={3}/>
                 </div>
             </div>
         </div>
