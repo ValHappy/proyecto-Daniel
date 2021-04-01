@@ -19,15 +19,13 @@ function Welcome(props) {
         setOpen(false);
     };
 
-    
-
     return (
         <div className={classes.welcome}>
             <Logo />
             <h1 className={classes.title}>Lorem ipsum dolor sit amet consectetur</h1>
             <p className={classes.text}>Lorem ipsum dolor sit amet consectetur adipiscing elit lectus sapien, cubilia mattis bibendum suscipit euismod metus proin convallis phasellus nisi, class fermentum id magnis accumsan vitae netus ad. Hendrerit fusce vestibulum placerat per primis mattis hac nostra maecenas aptent lacus mus venenatis, malesuada lectus leo nibh tincidunt tristique ullamcorper phasellus tempor natoque erat. Fermentum nascetur condimentum placerat vitae nec non donec eu conubia, ligula etiam magna proin hac morbi congue penatibus, tristique venenatis quisque nisl class pretium cras euismod.</p>
-            <Btn onClick={handleClickOpen} btn={"Action Button"} />
-            <Form open={open} handleClose={handleClose} location={props.location} history={props.history}/>
+            <Btn onClick={handleClickOpen} btn="Continuar" />
+            <Form open={open} handleClose={handleClose} location={props.location} history={props.history} />
         </div>
     );
 }
@@ -44,13 +42,12 @@ const useStyle = makeStyles((theme) => ({
     title: {
         margin: '0',
         padding: '0.5em',
-        color: colors.colortext,
         textAlign: 'center',
+        color: colors.black,
     },
     text: {
         margin: '0',
         padding: '1em',
-        color: colors.colortext,
         textAlign: 'center',
     },
 }));

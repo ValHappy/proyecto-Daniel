@@ -10,34 +10,33 @@ function Likert() {
             <p className={classes.question}> Lorem ipsum dolor sit amet consectetur</p>
 
             <RadioGroup className={classes.container} row aria-label="position" name="position" defaultValue="top">
-
                 <FormControlLabel
                     value="1"
-                    control={<Radio className={classes.radio} color="primary" />}
+                    control={<Radio className={classes.radio} color="primary" size="small"/>}
                     label="1"
                     labelPlacement="bottom"
                 />
                 <FormControlLabel
                     value="2"
-                    control={<Radio className={classes.radio} color="primary" />}
+                    control={<Radio className={classes.radio} color="primary" size="small"/>}
                     label="2"
                     labelPlacement="bottom"
                 />
                 <FormControlLabel
                     value="3"
-                    control={<Radio className={classes.radio} color="primary" />}
+                    control={<Radio className={classes.radio} color="primary" size="small"/>}
                     label="3"
                     labelPlacement="bottom"
                 />
                 <FormControlLabel
                     value="4"
-                    control={<Radio className={classes.radio} color="primary" />}
+                    control={<Radio className={classes.radio} color="primary" size="small"/>}
                     label="4"
                     labelPlacement="bottom"
                 />
                 <FormControlLabel
                     value="5"
-                    control={<Radio className={classes.radio} color="primary" />}
+                    control={<Radio className={classes.radio} color="primary" size="small"/>}
                     label="5"
                     labelPlacement="bottom"
                 />
@@ -48,7 +47,7 @@ function Likert() {
 
 const useStyle = makeStyles((theme) => ({
     likert: {
-        width: '25%',
+        width: '30%',
         margin: '1em',
         padding: '1em',
         display: 'flex',
@@ -60,6 +59,7 @@ const useStyle = makeStyles((theme) => ({
         color: colors.colortext,
     },
     container: {
+        width: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

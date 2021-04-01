@@ -7,19 +7,19 @@ import { withRouter } from 'react-router-dom';
 function Form({ handleClose, open, location, history }) {
 
     const classes = useStyle();
-    
+
     function handleClick(event, newValue) {
         history.push("/intro");
     }
 
     return (
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm">
-            <DialogTitle className={classes.title}>Registrate</DialogTitle>
+            <h1 className={classes.title}>Registrate</h1>
 
             <DialogContent className={classes.container}>
-                <DialogContentText className={classes.text}>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit lectus sapien, cubilia mattis bibendum suscipit euismod metus proin convallis phasellus nisi, class fermentum id magnis accumsan vitae netus ad. Hendrerit fusce vestibulum placerat per primis mattis hac nostra maecenas aptent lacus mus venenatis, malesuada lectus leo nibh tincidunt tristique ullamcorper phasellus tempor natoque erat
-                </DialogContentText>
+                <p className={classes.text}>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit lectus sapien, cubilia mattis bibendum suscipit euismod metus proin convallis phasellus nisi, class fermentum id magnis accumsan vitae netus ad. Hendrerit fusce vestibulum placerat per primis mattis hac nostra.
+                </p>
                 <div className={classes.fields}>
                     <TextField
                         className={classes.field}
@@ -30,7 +30,6 @@ function Form({ handleClose, open, location, history }) {
                         variant="outlined"
                         size="medium"
                     />
-
                     <TextField
                         className={classes.field}
                         id="email"
@@ -44,7 +43,7 @@ function Form({ handleClose, open, location, history }) {
             </DialogContent>
 
             <DialogActions className={classes.action} data-value={location.pathname}>
-                <Btn btn={"Siguiente"} value={"/intro"} onClick={handleClick}/>
+                <Btn btn={"Siguiente"} value={"/intro"} onClick={handleClick} />
             </DialogActions>
         </Dialog>
     );
@@ -66,10 +65,8 @@ const useStyle = makeStyles((theme) => ({
         marginTop: '2em',
     },
     title: {
-        margin: '0',
         marginTop: '2em',
-        padding: '0.5em',
-        color: colors.text,
+        color: colors.blue,
         textAlign: 'center',
     },
     container: {
@@ -78,7 +75,7 @@ const useStyle = makeStyles((theme) => ({
     text: {
         margin: '0',
         padding: '1em',
-        color: colors.text,
+        color: colors.colortext,
         textAlign: 'center',
     },
     action: {
@@ -86,6 +83,7 @@ const useStyle = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: '2.5em',
     },
 }));
 

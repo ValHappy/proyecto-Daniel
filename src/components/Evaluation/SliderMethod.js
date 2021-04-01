@@ -8,23 +8,24 @@ function SliderMethod() {
     return (
         <div className={classes.slider}>
             <p className={classes.question}> Lorem ipsum dolor sit amet consectetur</p>
-            <Slider
-                className={classes.container}
-                defaultValue={30}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                step={10}
-                marks
-                min={0}
-                max={50}
-            />
+            <div className={classes.container}>
+                <Slider
+                    defaultValue={3}
+                    aria-labelledby="discrete-slider"
+                    valueLabelDisplay="auto"
+                    step={1}
+                    marks
+                    min={1}
+                    max={5}
+                />
+            </div>
         </div>
     );
 }
 
 const useStyle = makeStyles(() => ({
     slider: {
-        width: '25%',
+        width: '30%',
         margin: '1em',
         padding: '1em',
         display: 'flex',
@@ -33,9 +34,10 @@ const useStyle = makeStyles(() => ({
         alignItems: 'center',
     },
     question: {
-        color: colors.colortext,
+        textAlign: 'center',
     },
     container: {
+        width: '55%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

@@ -4,8 +4,8 @@ import Timeline from '../General/Timeline';
 import { PlayCircleFilledRounded } from '@material-ui/icons';
 import colors from '../../styles/colors';
 
-const playerWidth = 350;
-const playerHeight = 45;
+const playerWidth = '35vh';
+const playerHeight = '3em';
 
 function Player({ pathFile, currentAudio, setCurrentAudio, index }) {
     const classes = useStyle();
@@ -13,10 +13,10 @@ function Player({ pathFile, currentAudio, setCurrentAudio, index }) {
     const [audioDuration, setAudioDuration] = useState();
     const [progress, setProgress] = React.useState(0);
     const [currentTime, setCurrentTime] = React.useState(0);
-    const [disableButton, setDisableButton] = useState(index==currentAudio? false:true);
+    const [disableButton, setDisableButton] = useState(index === currentAudio ? false : true);
 
     useEffect(() => {
-        if (index==currentAudio) setDisableButton(false);
+        if (index === currentAudio) setDisableButton(false);
     }, [currentAudio])
 
     audioIntro.addEventListener('loadedmetadata', function () {
@@ -40,7 +40,7 @@ function Player({ pathFile, currentAudio, setCurrentAudio, index }) {
     });
 
     audioIntro.addEventListener("ended", function () {
-        setCurrentAudio(currentAudio+1);
+        setCurrentAudio(currentAudio + 1);
 
     });
 

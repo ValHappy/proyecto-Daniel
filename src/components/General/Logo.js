@@ -15,8 +15,8 @@ function Logo() {
 const useStyle = makeStyles((theme) => ({
     logo: {
         width: logoWidth,
-        margin: '1em',
-        padding: '2em',
+        margin: '0.5em',
+        padding: '1em',
     },
 }));
 

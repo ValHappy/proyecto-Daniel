@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import colors from '../../styles/colors';
 
 //variables
-const btnWidth = 300;
+const btnWidth = '35vh';
 const btnHeigth = 40;
 
 function Btn({onClick,btn}) {
@@ -17,7 +17,7 @@ function Btn({onClick,btn}) {
 
 const useStyle = makeStyles((theme) => ({
     btn: {
-        margin: '2em',
+        margin: '1em',
         padding: '0.5em',
         width: btnWidth,
         height: btnHeigth,

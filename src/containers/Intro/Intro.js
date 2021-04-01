@@ -4,8 +4,9 @@ import colors from '../../styles/colors';
 import Logo from '../../components/General/Logo';
 import Music from '../../components/Music/Music';
 import { storage } from "../../helpers/firebase"
+import Btn from '../../components/General/Btn';
 
-function Intro() {
+function Intro({location, history}) {
     const [state, setState] = useState([]);
     const [currentAudio, setCurrentAudio] = useState(1);
     const storageReading = () => {
@@ -27,19 +28,26 @@ function Intro() {
             storageReading();
         }, []
     );
+
     const classes = useStyle();
+
+    function handleClick(event, newValue) {
+        history.push("/excecise");
+    }
+
     return (
         <div className={classes.intro}>
             <Logo className={classes.logo} />
             <div className={classes.container}>
                 <div className={classes.info}>
-                    <h2 className={classes.title}>Lorem ipsum dolor sit amet consectetur</h2>
+                    <h1 className={classes.title}>Introducción</h1>
                     <p className={classes.text}>Lorem ipsum dolor sit amet consectetur adipiscing elit lectus sapien, cubilia mattis bibendum suscipit euismod metus proin convallis phasellus nisi, class fermentum id magnis accumsan vitae netus ad. Hendrerit fusce vestibulum placerat per primis mattis hac nostra maecenas aptent lacus mus venenatis.</p>
                 </div>
                 <div className={classes.test}>
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={1} />
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={2}/>
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={3}/>
+                    <Btn btn='Siguiente' onClick={handleClick}/>
                 </div>
             </div>
         </div>
@@ -65,7 +73,7 @@ const useStyle = makeStyles((theme) => ({
         alignItems: 'center',
     },
     info: {
-        width: '45%',
+        width: '40%',
         height: '100%',
         padding: '0.5em',
         display: 'flex',
@@ -74,19 +82,20 @@ const useStyle = makeStyles((theme) => ({
         alignItems: 'flex-start',
     },
     title: {
-        textAlign: 'left',
+        width: '80%',
         margin: 0,
-        padding: '0.5em',
-        color: colors.violet,
+        padding: '0.2em',
+        textAlign: 'left',
+        color: colors.blue,
     },
     text: {
-        textAlign: 'left',
         width: '80%',
         margin: 0,
         padding: '0.5em',
-        color: colors.colortext,
+        textAlign: 'left',
     },
     test: {
+        width: '60%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',

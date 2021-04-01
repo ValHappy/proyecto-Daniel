@@ -13,25 +13,27 @@ function Exercise() {
 
     return (
         <div className={classes.exercise}>
-            <Logo className={classes.logo} />
+            <div className={classes.logo}>
+                <Logo />
+            </div>
             <div className={classes.info}>
                 <h2 className={classes.title}>Lorem ipsum dolor sit amet consectetur</h2>
                 <p className={classes.text}>Lorem ipsum dolor sit amet consectetur adipiscing elit lectus sapien, cubilia mattis bibendum suscipit euismod metus proin convallis phasellus nisi, class fermentum id magnis accumsan vitae netus ad. Hendrerit fusce vestibulum placerat per primis mattis hac nostra maecenas aptent lacus mus venenatis.</p>
             </div>
-
             <div className={classes.container}>
                 <div className={classes.content1}>
                     <Player />
                 </div>
                 <div className={classes.content2}>
                     <Player />
-                    <LikertMethod />
+                    <SliderMethod />
                     <Player />
                 </div>
             </div>
-
-            <Btn btn={"Siguiente"} />
-        </div>
+            <div className={classes.btn}>
+                <Btn btn={"Siguiente"} />
+            </div>
+        </div >
     );
 }
 
@@ -45,22 +47,30 @@ const useStyle = makeStyles((theme) => ({
         alignItems: 'center',
     },
     logo: {
-
+        margin: 0,
+        padding: 0,
+        width: '100%',
+        height: '10%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
     },
     info: {
+        margin: 0,
+        padding: 0,
         width: '50%',
-        margin: '1em',
-        padding: '0.5em',
+        height: '35%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+
     },
     title: {
         textAlign: 'center',
         margin: 0,
         padding: '0.5em',
-        color: colors.violet,
+        color: colors.blue,
     },
     text: {
         textAlign: 'center',
@@ -70,23 +80,41 @@ const useStyle = makeStyles((theme) => ({
         color: colors.colortext,
     },
     container: {
-        width: '90%',
-        margin: '1em',
-        padding: '1em',
+        margin: 0,
+        padding: 0,
+        width: '100%',
+        height: '30%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
     },
     content1: {
-        padding: '1em',
+        margin: 0,
+        padding: 0,
+        width: '100%',
+        height: '35%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
     },
     content2: {
+        margin: 0,
+        padding: 0,
         width: '100%',
-        padding: '1em',
+        height: '65%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    btn: {
+        margin: 0,
+        padding: 0,
+        width: '100%',
+        height: '10%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
     },
 }));
 

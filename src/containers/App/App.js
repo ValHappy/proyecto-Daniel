@@ -5,18 +5,25 @@ import { makeStyles } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //My containers
+import Start from "../Start/Start";
 import Welcome from "../Welcome/Welcome";
 import Intro from '../Intro/Intro';
 import Exercise from '../Exercise/Exercise';
+import Final from '../Final/Final';
+import Login from '../Login/Login';
 
 function App() {
   const classes = useStyle();
 
   return (
-    <Router basename={window.location.pathname || ''}>
+    <Router>
       <div className={classes.app}>
-       <Route path="/" exact component={Welcome} />
+        <Route path="/" exact component={Start} />
+        <Route path="/welcome" component={Welcome} />
         <Route path="/intro" component={Intro} />
+        <Route path="/exercise" component={Exercise} />
+        <Route path="/final" component={Final} />
+        <Route path="/login" component={Login} />
       </div>
     </Router>
   );

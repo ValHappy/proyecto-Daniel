@@ -42,12 +42,12 @@ const useStyle = makeStyles((theme) => ({
     title: {
         margin: 0,
         textAlign: 'right',
-        color: colors.text,
+        color: colors.colortext,
     },
     text: {
         margin: 0,
         textAlign: 'right',
-        color: colors.text,
+        color: colors.colortext,
     },
     divider: {
         width: 40,
