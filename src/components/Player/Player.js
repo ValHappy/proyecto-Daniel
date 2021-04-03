@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { duration, IconButton, makeStyles } from '@material-ui/core';
+import { IconButton, makeStyles } from '@material-ui/core';
 import Timeline from '../General/Timeline';
 import { PlayCircleFilledRounded } from '@material-ui/icons';
 import colors from '../../styles/colors';
@@ -17,6 +17,7 @@ function Player({ pathFile, currentAudio, setCurrentAudio, index }) {
 
     useEffect(() => {
         if (index === currentAudio) setDisableButton(false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentAudio])
 
     audioIntro.addEventListener('loadedmetadata', function () {

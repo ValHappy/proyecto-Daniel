@@ -8,6 +8,7 @@ import Btn from '../../components/General/Btn';
 
 function Intro({history}) {
     const [state, setState] = useState([]);
+    const [isDisplay, setDisplay] = useState('none');
     const [currentAudio, setCurrentAudio] = useState(1);
     const storageReading = () => {
         storage.ref('sonidos/introduccion').listAll().then(function (res) {
@@ -26,7 +27,15 @@ function Intro({history}) {
     useEffect(
         () => {
             storageReading();
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []
+    );
+    useEffect(
+        () => {
+            if (currentAudio >= 4) {
+                setDisplay('');
+            }
+        }, [currentAudio]
     );
 
     const classes = useStyle();
@@ -48,7 +57,7 @@ function Intro({history}) {
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={1} />
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={2}/>
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={3}/>
-                    <Btn btn='Siguiente' value={"/exercise"}  onClick={handleClick}/>
+                    <Btn btn='Siguiente' value={"/exercise"} isDisplay={isDisplay} onClick={handleClick}/>
                 </div>
             </div>
         </div>

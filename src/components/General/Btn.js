@@ -7,11 +7,11 @@ import colors from '../../styles/colors';
 const btnWidth = '35vh';
 const btnHeigth = 40;
 
-function Btn({onClick,btn,value=""}) {
+function Btn({onClick,btn,value="", isDisplay}) {
     const classes = useStyle();
-
+    console.log(isDisplay)
     return (
-        <Button onClick={onClick} className={classes.btn} value={value} variant="outlined"> {btn} </Button>
+        <Button onClick={onClick} className={classes.btn} value={value} variant="outlined" style={{display: isDisplay}} > {btn} </Button>
     );
 }
 

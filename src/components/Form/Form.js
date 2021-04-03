@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, makeStyles, TextField } from '@material-ui/core';
+import { Dialog, DialogActions, DialogContent, makeStyles, TextField } from '@material-ui/core';
 import Btn from '../General/Btn';
 import colors from '../../styles/colors';
 import { withRouter } from 'react-router-dom';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, Slider } from '@material-ui/core';
-import colors from '../../styles/colors';
 
 function SliderMethod() {
     const classes = useStyle();
