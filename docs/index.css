@@ -2,8 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  letter-spacing: 1.5px;
-  line-height: 25px;
+  font-size: 90%;
+  letter-spacing: 0.1rem;
+  line-height: 1.6em;
+  font-weight: 300;
   color: #808F9F;
 }
 /*# sourceMappingURL=index.css.map */
