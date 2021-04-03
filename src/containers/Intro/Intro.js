@@ -6,7 +6,7 @@ import Music from '../../components/Music/Music';
 import { storage } from "../../helpers/firebase"
 import Btn from '../../components/General/Btn';
 
-function Intro({location, history}) {
+function Intro({history}) {
     const [state, setState] = useState([]);
     const [currentAudio, setCurrentAudio] = useState(1);
     const storageReading = () => {
@@ -31,9 +31,10 @@ function Intro({location, history}) {
 
     const classes = useStyle();
 
-    function handleClick(event, newValue) {
-        history.push("/excecise");
+    function handleClick({ currentTarget }) {
+        history.push(currentTarget.value);
     }
+
 
     return (
         <div className={classes.intro}>
@@ -47,7 +48,7 @@ function Intro({location, history}) {
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={1} />
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={2}/>
                     <Music pathFile={state[0]} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} index={3}/>
-                    <Btn btn='Siguiente' onClick={handleClick}/>
+                    <Btn btn='Siguiente' value={"/exercise"}  onClick={handleClick}/>
                 </div>
             </div>
         </div>

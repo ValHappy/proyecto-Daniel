@@ -4,13 +4,14 @@ import Btn from '../General/Btn';
 import colors from '../../styles/colors';
 import { withRouter } from 'react-router-dom';
 
-function Form({ handleClose, open, location, history }) {
+function Form({ handleClose, open, history }) {
 
     const classes = useStyle();
 
-    function handleClick(event, newValue) {
-        history.push("/intro");
+    function handleClick({ currentTarget }) {
+        history.push(currentTarget.value);
     }
+
 
     return (
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm">
@@ -42,7 +43,7 @@ function Form({ handleClose, open, location, history }) {
                 </div>
             </DialogContent>
 
-            <DialogActions className={classes.action} data-value={location.pathname}>
+            <DialogActions className={classes.action} >
                 <Btn btn={"Siguiente"} value={"/intro"} onClick={handleClick} />
             </DialogActions>
         </Dialog>

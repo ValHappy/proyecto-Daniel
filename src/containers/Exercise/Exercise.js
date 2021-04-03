@@ -8,8 +8,12 @@ import SliderMethod from '../../components/Evaluation/SliderMethod';
 import LikertMethod from '../../components/Evaluation/LikertMethod';
 
 
-function Exercise() {
+function Exercise({history}) {
     const classes = useStyle();
+    function handleClick({ currentTarget }) {
+        history.push(currentTarget.value);
+    }
+
 
     return (
         <div className={classes.exercise}>
@@ -31,7 +35,7 @@ function Exercise() {
                 </div>
             </div>
             <div className={classes.btn}>
-                <Btn btn={"Siguiente"} />
+                <Btn btn={"Siguiente"} value="/final" onClick={handleClick} />
             </div>
         </div >
     );

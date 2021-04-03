@@ -4,8 +4,12 @@ import img from '../../assets/img/wallpaper.svg';
 import Logo from '../../components/General/Logo';
 import Btn from '../../components/General/Btn';
 
-function Start() {
+function Start({history}) {
     const classes = useStyle();
+
+    function handleClick({ currentTarget }) {
+        history.push(currentTarget.value);
+    }
 
     return (
         <div className={classes.start}>
@@ -13,7 +17,7 @@ function Start() {
             <div className={classes.container}>
                 <Logo />
                 <p >Lorem ipsum dolor as sit amet no se que</p>
-                <Btn btn="Continuar" />
+                <Btn btn="Continuar" value="/welcome" onClick={handleClick}/>
             </div>
         </div>
     );
