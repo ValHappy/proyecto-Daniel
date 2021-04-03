@@ -16,7 +16,7 @@ function App() {
   const classes = useStyle();
 
   return (
-    <Router>
+    <Router  basename={process.env.PUBLIC_URL}>
       <div className={classes.app}>
         <Route path="/" exact component={Start} />
         <Route path="/welcome" component={Welcome} />
