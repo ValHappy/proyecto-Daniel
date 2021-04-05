@@ -7,9 +7,10 @@ import colors from '../../styles/colors';
 const playerWidth = '35vh';
 const playerHeight = '3em';
 
-function Player({ pathFile, currentAudio, setCurrentAudio, index }) {
+function Player({ pathFile, currentAudio, setCurrentAudio, index, reproLimit }) {
     const classes = useStyle();
     const audioIntro = new Audio(pathFile);
+    const [reproTimes, setReproTimes] = useState(1);
     const [audioDuration, setAudioDuration] = useState();
     const [progress, setProgress] = React.useState(0);
     const [currentTime, setCurrentTime] = React.useState(0);
@@ -41,8 +42,16 @@ function Player({ pathFile, currentAudio, setCurrentAudio, index }) {
     });
 
     audioIntro.addEventListener("ended", function () {
-        setCurrentAudio(currentAudio + 1);
-
+        if (!!currentAudio) {
+            setCurrentAudio(currentAudio + 1);
+        } else if (!!reproLimit){
+            setReproTimes(reproTimes + 1);
+            if (reproTimes === reproLimit) {
+                setDisableButton(true);
+            } else {
+                setDisableButton(false);
+            }
+        }
     });
 
     const handleClick = (e) => {

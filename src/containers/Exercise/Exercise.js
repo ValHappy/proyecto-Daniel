@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Player from '../../components/Player/Player';
 import Logo from '../../components/General/Logo';
 import colors from '../../styles/colors';
 import Btn from '../../components/General/Btn';
+import { storage } from "../../helpers/firebase"
 import SliderMethod from '../../components/Evaluation/SliderMethod';
 import LikertMethod from '../../components/Evaluation/LikertMethod';
 
@@ -14,6 +15,23 @@ function Exercise({history}) {
         history.push(currentTarget.value);
     }
 
+    const [state, setState] = useState([]);
+    const storageReading = () => {
+        storage.ref('sonidos/introduccion').listAll().then(function (res) {
+            res.items.forEach(function (itemRef) {
+                // All the items under listRef.
+                itemRef.getDownloadURL().then((itemPath) => {
+                    setState([...state, itemPath]);
+                });
+            });
+        }).catch(function (error) { });
+    };
+    useEffect(
+        () => {
+            storageReading();
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, []
+    );
 
     return (
         <div className={classes.exercise}>
@@ -26,12 +44,12 @@ function Exercise({history}) {
             </div>
             <div className={classes.container}>
                 <div className={classes.content1}>
-                    <Player />
+                    <Player pathFile={state[0]} reproLimit={1}/>
                 </div>
                 <div className={classes.content2}>
-                    <Player />
+                    <Player pathFile={state[0]} reproLimit={2}/>
                     <SliderMethod />
-                    <Player />
+                    <Player pathFile={state[0]} reproLimit={2}/>
                 </div>
             </div>
             <div className={classes.btn}>

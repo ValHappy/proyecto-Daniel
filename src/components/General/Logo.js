@@ -2,13 +2,13 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import {ReactComponent as LogoSrc} from "../../assets/img/logo.svg"
 
-const logoWidth = 350;
+const logoWidth = '20em';
 
 function Logo() {
     const classes = useStyle();
 
     return (
-        <LogoSrc className={classes.logo}/>        
+        <LogoSrc className={classes.logo} />        
     );
 }
 const useStyle = makeStyles((theme) => ({
