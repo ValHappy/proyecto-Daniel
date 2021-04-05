@@ -1,11 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import img from '../../assets/img/wallpaper.svg';
+import Img from '../../assets/img/wallpaper.svg';
 import Logo from '../../components/General/Logo';
 import Btn from '../../components/General/Btn';
 
 function Start({history}) {
     const classes = useStyle();
+    const img = Img;
 
     function handleClick({ currentTarget }) {
         history.push(currentTarget.value);

@@ -1,11 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import logo from "../../assets/img/logo.svg"
+import LogoResource from "../../assets/img/logo.svg"
 
 const logoWidth = 350;
 
 function Logo() {
     const classes = useStyle();
+    const logo = LogoResource;
 
     return (
         <img className={classes.logo} src={logo} alt="Musical Experience"></img>
